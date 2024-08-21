@@ -17,29 +17,45 @@ Each extension defines how it matches certain chat interactions and how it shoul
 ## Usage
 To use these extensions, you need to include the **extensions.js** file (or **your own file/URL**) in your project and import the extensions into your HTML file where the Voiceflow chat widget is initialized.
 
-The **index.html** file is an example of how to set up the chat widget with the provided extensions. It includes a confetti-canvas for the confetti effect and initializes the Voiceflow chat widget with the extensions.
+The **index.html** file is an example of how to set up the chat widget with the provided extensions.
 
 ## Initialization
 The chat widget is initialized with the following configuration:
-```javascript
-window.voiceflow.chat.load({
-  verify: { projectID: 'your project id' },
-  url: 'https://general-runtime.voiceflow.com',
-  versionID: 'development', // or 'production'
-  user: {
-    name: 'Demo User',
-  },
-  render: {
-    mode: 'overlay',
-  },
-  autostart: false,
-  allowDangerousHTML: true,
-  assistant: {
-    extensions: [
-      SeatSelectorv2Extension
-    ],
-  },
-});
+```html
+<script type="module">
+      import {
+        SeatSelectorExtension,
+        SeatSelectorv2Extension,
+      } from '/extensions.js';
+
+      (function (d, t) {
+        var v = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+          window.voiceflow.chat.load({
+            verify: { projectID: '66c45f514ee828676d637e62' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'development',
+            user: {
+              name: 'Demo User',
+            },
+            render: {
+              mode: 'overlay',
+            },
+            allowDangerousHTML: true,
+            assistant: {
+              extensions: [
+                SeatSelectorExtension,
+                SeatSelectorv2Extension,
+              ],
+            },
+          });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+        v.type = 'text/javascript';
+        s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
 ```
 
 ## Development
