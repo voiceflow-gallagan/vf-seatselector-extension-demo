@@ -1,0 +1,64 @@
+<!-- THIS IS AN EXAMPLE PAGE AND SHOULD NOT BE USED OUTSIDE OF DEVELOPMENT -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Widget | Seat Selector Demo</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        background-color: #f9f9f9;
+        background-image: url('/img/jetbluebg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      #flat-chat {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+
+  </head>
+  <body>
+
+   <div id="flat-chat"></div>
+    <div id="voiceflow-chat-frame"></div>
+    <script type="module">
+      import {
+        SeatSelectorExtension,
+        SeatSelectorv2Extension,
+      } from '/extensions.js';
+
+      (function (d, t) {
+        var v = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+          window.voiceflow.chat.load({
+            verify: { projectID: '66c45f514ee828676d637e62' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'development',
+            user: {
+              name: 'Demo User',
+            },
+            render: {
+              mode: 'overlay',
+            },
+            allowDangerousHTML: true,
+            assistant: {
+              extensions: [
+                SeatSelectorExtension,
+                SeatSelectorv2Extension,
+              ],
+            },
+          });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+        v.type = 'text/javascript';
+        s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+  </body>
+</html>
