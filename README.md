@@ -67,6 +67,10 @@ The Voiceflow project to test with this demo is available in this repo.
 The demo uses the seatchart.js library to create the seats map.
 GitHub: https://github.com/omahili/seatchart.js
 
+<a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/m0ct498t96jhfqvkpbm0" alt="trackgit-views" />
+</a>
+
 ### Note
 Remember to replace the projectID and use the versionID of your choice.
 
