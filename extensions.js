@@ -2,7 +2,7 @@ export const SeatSelectorExtension = {
   name: 'SeatSelector',
   type: 'response',
   match: ({ trace }) =>
-    trace.payload?.name === 'ext_seatselector',
+    trace.type === 'ext_seatselector' || trace.payload?.name === 'ext_seatselector',
   render: ({ trace, element }) => {
     const { numberOfSeats = 0 } = trace.payload
     const seatSelectorContainer = document.createElement('div')
@@ -136,7 +136,7 @@ export const SeatSelectorv2Extension = {
   name: 'SeatSelectorv2',
   type: 'response',
   match: ({ trace }) =>
-    trace.payload?.name === 'ext_seatselectorv2',
+    trace.type === 'ext_seatselectorv2' || trace.payload?.name === 'ext_seatselectorv2',
   render: ({ trace, element }) => {
     const { numberOfSeats = 1, reservedSeats = [] } = trace.payload
     const seatSelectorContainer = document.createElement('div')
