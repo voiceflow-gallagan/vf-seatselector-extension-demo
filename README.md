@@ -75,3 +75,5 @@ Remember to replace the projectID and use the versionID of your choice.
 <img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/m0ct498t96jhfqvkpbm0" alt="trackgit-views" />
 </a>
 
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=voiceflow-community_vf-seatselector-extension-demo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=voiceflow-community_vf-seatselector-extension-demo)
